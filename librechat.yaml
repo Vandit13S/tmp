@@ -1,0 +1,163 @@
+# For more information, see the Configuration Guide:
+# https://www.librechat.ai/docs/configuration/librechat_yaml
+
+# Configuration version (required)
+version: 1.1.5
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+# Custom interface configuration
+interface:
+  endpointsMenu: false
+  modelSelect: false
+  parameters: false
+  sidePanel: true
+  presets: false
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  # Privacy policy settings
+modelSpecs:
+  enforce: false
+  list:
+    - name: "Russian GPT 4o mini"
+      label: "Russian GPT 4o mini"
+      description: "Russian GPT 4o mini"
+      showIconInMenu: true
+      iconURL: "openAI"
+      preset:
+        default: true
+        endpoint: "openAI"
+        model: "gpt-4o-mini"
+        maxContextTokens: 127500 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Russian GPT 4o mini"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Russian Google mini"
+      label: "Russian Google mini"
+      description: "Russian Google mini"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-flash-latest"
+        chatGptLabel: "Russian Google mini"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Russian GPT 4o"
+      label: "Russian GPT 4o"
+      description: "Russian GPT 4o"
+      showIconInMenu: true
+      iconURL: "openAI"
+      preset:
+        default: false
+        endpoint: "openAI"
+        model: "gpt-4o-2024-08-06"
+        maxContextTokens: 38000 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Russian GPT 4o"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Russian Google Pro"
+      label: "Russian Google Pro"
+      description: "Russian Google Pro"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-pro-002"
+        chatGptLabel: "Russian Google Pro"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Excel AI"
+      label: "Excel AI"
+      description: "Excel AI"
+      showIconInMenu: true
+      iconURL: "https://raw.githubusercontent.com/Ramya0301/Icon/main/excel.svg"
+      preset:
+        default: false
+        endpoint: "openAI"
+        model: "gpt-4o-2024-08-06"
+        maxContextTokens: 30000 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Excel AI"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          You are an Excel and data analysis expert. Your task is to provide expert guidance on Excel-related tasks and data analysis, offering appropriate methods. Follow these steps:
+          1. Understand the Task: Clearly identify the Excel-related task or data analysis problem the user is facing.
+          2. Identify the approaches to solve the problem.
+          3. Provide a detailed step-by-step guide on how to solve the problem.
+
+          Structure your response clearly, using bullet points or numbered steps when necessary. Include brief code snippets if applicable. Ensure your recommendations are practical and tailored to the user's needs. Address potential challenges or common mistakes users might make in Excel. Don't talk too much.
+          Remind the user to give you as much context as possible for your better understanding of the task.
+          Always reply in Russian.
+
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook']
+  # allowedDomains:
+  # - "gmail.com"
+
+# speech:
+#   tts:
+#     openai:
+#       url: ''
+#       apiKey: '${TTS_API_KEY}'
+#       model: ''
+#       voices: ['']
+
+#  
+#   stt:
+#     openai:
+#       url: ''
+#       apiKey: '${STT_API_KEY}'
+#       model: ''
+
+# rateLimits:
+#   fileUploads:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
+#   conversationsImport:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
+
+# Definition of custom endpoints
+endpoints:
+  # assistants:
+  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
+  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
+  #   timeoutMs: 180000  # Timeout for assistant operations
+  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
+  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+  #   # excludedIds: ["asst_excludedAssistantId"]
+  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
+  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
+  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+  #   retrievalModels: ["gpt-4-turbo-preview"]
+  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+  google:
+    apiKey: ${GOOGLE_API_KEY}
+    models:
+     - gemini-1.5-flash-latest
+     - gemini-1.5-pro-002
