@@ -1,0 +1,131 @@
+# For more information, see the Configuration Guide:
+# https://www.librechat.ai/docs/configuration/librechat_yaml
+
+# Configuration version (required)
+version: 1.1.5
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+# Custom interface configuration
+interface:
+  endpointsMenu: false
+  modelSelect: false
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  # Privacy policy settings
+modelSpecs:
+  enforce: false
+  list:
+    - name: "Chat GPT 4o mini"
+      label: "Chat GPT 4o mini"
+      description: "Chat GPT 4o mini"
+      showIconInMenu: true
+      iconURL: "openAI"
+      preset:
+        default: true
+        endpoint: "openAI"
+        model: "gpt-4o-mini"
+        maxContextTokens: 127500 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Chat GPT 4o mini"
+        greeting: |
+          Welcome to Chat GPT 4o mini! How can I assist you today?
+    - name: "Gemini 1.5 Flash"
+      label: "Gemini 1.5 Flash"
+      description: "Gemini 1.5 Flash"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-flash-latest"
+        chatGptLabel: "Gemini 1.5 Flash"
+        greeting: |
+          Welcome to Gemini 1.5 Flash! How can I assist you today?
+    - name: "Chat GPT 4o"
+      label: "Chat GPT 4o"
+      description: "Chat GPT 4o"
+      showIconInMenu: true
+      iconURL: "openAI"
+      preset:
+        default: false
+        endpoint: "openAI"
+        model: "gpt-4o-2024-08-06"
+        maxContextTokens: 38000 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Chat GPT 4o"
+        greeting: |
+          Welcome to Chat GPT 4o! How can I assist you today?
+    - name: "Gemini 1.5 Pro"
+      label: "Gemini 1.5 Pro"
+      description: "Gemini 1.5 Pro"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-pro-002"
+        chatGptLabel: "Gemini 1.5 Pro"
+        greeting: |
+          Welcome to Gemini 1.5 Pro! How can I assist you today?
+
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook']
+  # allowedDomains:
+  # - "gmail.com"
+
+# speech:
+#   tts:
+#     openai:
+#       url: ''
+#       apiKey: '${TTS_API_KEY}'
+#       model: ''
+#       voices: ['']
+
+#  
+#   stt:
+#     openai:
+#       url: ''
+#       apiKey: '${STT_API_KEY}'
+#       model: ''
+
+# rateLimits:
+#   fileUploads:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
+#   conversationsImport:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
+
+# Definition of custom endpoints
+endpoints:
+  # assistants:
+  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
+  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
+  #   timeoutMs: 180000  # Timeout for assistant operations
+  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
+  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+  #   # excludedIds: ["asst_excludedAssistantId"]
+  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
+  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
+  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+  #   retrievalModels: ["gpt-4-turbo-preview"]
+  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+  google:
+    apiKey: ${GOOGLE_API_KEY}
+    models:
+     - gemini-1.5-flash-latest
+     - gemini-1.5-pro-002
