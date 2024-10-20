@@ -21,9 +21,23 @@ interface:
 modelSpecs:
   enforce: false
   list:
+    - name: "Russian Google mini"
+      label: "Russian Google mini"
+      description: "Быстрый, неограниченное количество сообщений"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-flash-latest"
+        chatGptLabel: "Russian Google mini"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
     - name: "Russian GPT 4o mini"
       label: "Russian GPT 4o mini"
-      description: "Russian GPT 4o mini"
+      description: "Быстрый, неограниченное количество сообщений"
       showIconInMenu: true
       iconURL: "openAI"
       preset:
@@ -38,23 +52,23 @@ modelSpecs:
           Привет, чем я могу вам помочь сегодня?
         promptPrefix: |
           Always reply in Russian.
-    - name: "Russian Google mini"
-      label: "Russian Google mini"
-      description: "Russian Google mini"
+    - name: "Russian Google Pro"
+      label: "Russian Google Pro"
+      description: "Ограниченное количество сообщений, используйте, если результаты вышеуказанных моделей не удовлетворяют"
       showIconInMenu: true
       iconURL: "google"
       preset:
         default: false
         endpoint: "google"
-        model: "gemini-1.5-flash-latest"
-        chatGptLabel: "Russian Google mini"
+        model: "gemini-1.5-pro-002"
+        chatGptLabel: "Russian Google Pro"
         greeting: |
           Привет, чем я могу вам помочь сегодня?
         promptPrefix: |
           Always reply in Russian.
     - name: "Russian GPT 4o"
       label: "Russian GPT 4o"
-      description: "Russian GPT 4o"
+      description: "Ограниченное количество сообщений, используйте, если не удовлетворены результатами всех вышеуказанных моделей"
       showIconInMenu: true
       iconURL: "openAI"
       preset:
@@ -65,20 +79,6 @@ modelSpecs:
         max_tokens: 4096 # Maximum output tokens
         temperature: 0.8
         chatGptLabel: "Russian GPT 4o"
-        greeting: |
-          Привет, чем я могу вам помочь сегодня?
-        promptPrefix: |
-          Always reply in Russian.
-    - name: "Russian Google Pro"
-      label: "Russian Google Pro"
-      description: "Russian Google Pro"
-      showIconInMenu: true
-      iconURL: "google"
-      preset:
-        default: false
-        endpoint: "google"
-        model: "gemini-1.5-pro-002"
-        chatGptLabel: "Russian Google Pro"
         greeting: |
           Привет, чем я могу вам помочь сегодня?
         promptPrefix: |
