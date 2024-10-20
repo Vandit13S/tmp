@@ -145,4 +145,13 @@ endpoints:
     apiKey: ${ANTHROPIC_API_KEY}
     models:
      - claude-3-5-sonnet-20240620
-     
+fileConfig:
+  endpoints:
+    openAI:
+      fileLimit: 5
+      fileSizeLimit: 10  # Maximum size for an individual file in MB
+      totalSizeLimit: 55  # Maximum total size for all files in a single request in MB
+    google:
+      fileLimit: 5
+      fileSizeLimit: 10  # Maximum size for an individual file in MB
+      totalSizeLimit: 55  # Maximum total size for all files in a single request in MB
