@@ -19,7 +19,7 @@ interface:
   multiConvo: true
   # Privacy policy settings
 modelSpecs:
-  enforce: false
+  enforce: true
   list:
     - name: "Russian Google mini"
       label: "Russian Google mini"
