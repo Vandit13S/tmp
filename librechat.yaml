@@ -161,3 +161,13 @@ endpoints:
     models:
      - gemini-1.5-flash-latest
      - gemini-1.5-pro-002
+fileConfig:
+  endpoints:
+    openAI:
+      fileLimit: 5
+      fileSizeLimit: 10  # Maximum size for an individual file in MB
+      totalSizeLimit: 55  # Maximum total size for all files in a single request in MB
+    google:
+      fileLimit: 5
+      fileSizeLimit: 10  # Maximum size for an individual file in MB
+      totalSizeLimit: 55  # Maximum total size for all files in a single request in MB
