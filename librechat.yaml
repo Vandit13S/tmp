@@ -85,7 +85,7 @@ modelSpecs:
           Always reply in Russian.
     - name: "Excel AI"
       label: "Excel AI"
-      description: "Excel AI"
+      description: "Взаимодействуйте с файлами Excel"
       showIconInMenu: true
       iconURL: "https://raw.githubusercontent.com/Ramya0301/Icon/main/excel.svg"
       preset:
