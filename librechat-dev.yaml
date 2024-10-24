@@ -27,7 +27,7 @@ modelSpecs:
       showIconInMenu: true
       iconURL: "anthropic"
       preset:
-        default: false
+        default: true
         endpoint: "anthropic"
         model: "claude-3-5-sonnet-20241022"
         chatGptLabel: "Claude 3.5 Sonnet"
@@ -53,7 +53,7 @@ modelSpecs:
       showIconInMenu: true
       iconURL: "openAI"
       preset:
-        default: true
+        default: false
         endpoint: "openAI"
         model: "gpt-4o-mini"
         maxContextTokens: 127500 # Maximum context tokens
