@@ -21,6 +21,32 @@ interface:
 modelSpecs:
   enforce: false
   list:
+    - name: "Russian Claude 3.5 Sonnet"
+      label: "Russian Claude 3.5 Sonnet"
+      description: "Лучшая в мире модель ИИ для программирования"
+      showIconInMenu: true
+      iconURL: "anthropic"
+      preset:
+        default: false
+        endpoint: "anthropic"
+        model: "claude-3-5-sonnet-20241022"
+        chatGptLabel: "Claude 3.5 Sonnet"
+        greeting: |
+          Welcome to Claude 3.5 Sonnet! How can I assist you today?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Claude 3.5 Sonnet"
+      label: "Claude 3.5 Sonnet"
+      description: "World's best coding AI model"
+      showIconInMenu: true
+      iconURL: "anthropic"
+      preset:
+        default: false
+        endpoint: "anthropic"
+        model: "claude-3-5-sonnet-20241022"
+        chatGptLabel: "Claude 3.5 Sonnet"
+        greeting: |
+          Welcome to Claude 3.5 Sonnet! How can I assist you today?
     - name: "Chat GPT 4o mini"
       label: "Chat GPT 4o mini"
       description: "Chat GPT 4o mini"
@@ -75,18 +101,7 @@ modelSpecs:
         chatGptLabel: "Gemini 1.5 Pro"
         greeting: |
           Welcome to Gemini 1.5 Pro! How can I assist you today?
-    - name: "Claude 3.5 Sonnet"
-      label: "Claude 3.5 Sonnet"
-      description: "Claude 3.5 Sonnet"
-      showIconInMenu: true
-      iconURL: "anthropic"
-      preset:
-        default: false
-        endpoint: "anthropic"
-        model: "claude-3-5-sonnet-20240620"
-        chatGptLabel: "Claude 3.5 Sonnet"
-        greeting: |
-          Welcome to Claude 3.5 Sonnet! How can I assist you today?
+
 # Example Registration Object Structure (optional)
 registration:
   socialLogins: ['github', 'google', 'discord', 'openid', 'facebook']
