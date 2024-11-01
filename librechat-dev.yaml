@@ -83,7 +83,7 @@ modelSpecs:
         default: false
         endpoint: "openAI"
         model: "gpt-4o-2024-08-06"
-        maxContextTokens: 38000 # Maximum context tokens
+        maxContextTokens: 380 # Maximum context tokens
         max_tokens: 4096 # Maximum output tokens
         temperature: 0.8
         chatGptLabel: "Chat GPT 4o"
