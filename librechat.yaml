@@ -52,20 +52,20 @@ modelSpecs:
           Привет, чем я могу вам помочь сегодня?
         promptPrefix: |
           Always reply in Russian.
-    - name: "Russian Google Pro"
-      label: "Russian Google Pro"
-      description: "Ограниченное количество сообщений, используйте, если результаты вышеуказанных моделей не удовлетворяют"
-      showIconInMenu: true
-      iconURL: "google"
-      preset:
-        default: false
-        endpoint: "google"
-        model: "gemini-1.5-pro-002"
-        chatGptLabel: "Russian Google Pro"
-        greeting: |
-          Привет, чем я могу вам помочь сегодня?
-        promptPrefix: |
-          Always reply in Russian.
+    # - name: "Russian Google Pro"
+    #   label: "Russian Google Pro"
+    #   description: "Ограниченное количество сообщений, используйте, если результаты вышеуказанных моделей не удовлетворяют"
+    #   showIconInMenu: true
+    #   iconURL: "google"
+    #   preset:
+    #     default: false
+    #     endpoint: "google"
+    #     model: "gemini-1.5-pro-002"
+    #     chatGptLabel: "Russian Google Pro"
+    #     greeting: |
+    #       Привет, чем я могу вам помочь сегодня?
+    #     promptPrefix: |
+    #       Always reply in Russian.
     - name: "Russian GPT 4o"
       label: "Russian GPT 4o"
       description: "Ограниченное количество сообщений, используйте, если не удовлетворены результатами всех вышеуказанных моделей"
