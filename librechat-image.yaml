@@ -22,16 +22,19 @@ modelSpecs:
       label: "Image Prompt Helper"
       description: "Это поможет вам создать базовый запрос для вашего изображения."
       showIconInMenu: true
-      iconURL: "google"
+      iconURL: "openAI"
       preset:
         default: false
-        endpoint: "google"
-        model: "gemini-1.5-flash-latest"
-        chatGptLabel: "Russian Google mini"
+        endpoint: "openAI"
+        model: "gpt-4o-mini"
+        maxContextTokens: 127500 # Maximum context tokens
+        max_tokens: 4096 # Maximum output tokens
+        temperature: 0.8
+        chatGptLabel: "Chat GPT 4o mini"
         greeting: |
           Привет, какое изображение вы хотите создать?
         promptPrefix: |
-          You are an AI image prompt generator. Your task is to generate high quality and detailed image prompts for the user based on their requirements. Always reply in the language the user is starting the conversation in.
+          You are an AI image prompt generator. Your task is to generate high quality and detailed image prompt for the user based on their requirements. Always reply in the language the user is starting the conversation in.  
     - name: "Image Generation Model"
       label: "Image Generation Model"
       description: "Generate images"
