@@ -1,0 +1,102 @@
+# Configuration version (required)
+version: 1.1.5
+ 
+# Cache settings: Set to true to enable caching
+cache: true
+ 
+# Custom interface configuration
+interface:
+  endpointsMenu: false
+  modelSelect: false
+  parameters: false
+  sidePanel: true
+  presets: false
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  # Privacy policy settings
+modelSpecs:
+  enforce: true
+  list:
+    - name: "Russian Google mini"
+      label: "Russian Google mini"
+      description: "Russian Google mini"
+      showIconInMenu: true
+      iconURL: "google"
+      preset:
+        default: false
+        endpoint: "google"
+        model: "gemini-1.5-flash-latest"
+        chatGptLabel: "Russian Google mini"
+        greeting: |
+          Привет, чем я могу вам помочь сегодня?
+        promptPrefix: |
+          Always reply in Russian.
+    - name: "Generate Images using DALLE3"
+      label: "Image Generation Tool (DALLE3)"
+      description: "Generate images using DALLE3"
+      preset:
+          default: false
+          endpoint: "gptPlugins"
+          model: "gpt-4o-2024-08-06"
+          modelLabel: "Image Generation"
+          tools: ["dalle"]
+          agentOptions:
+            model: "gpt-4o-2024-08-06"
+          greeting: |
+            This assistant will generate images based on your query using DALLE3
+          promptPrefix: |
+            Taking the users input, generate an image using dalle
+  
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook']
+  # allowedDomains:
+  # - "gmail.com"
+ 
+# speech:
+#   tts:
+#     openai:
+#       url: ''
+#       apiKey: '${TTS_API_KEY}'
+#       model: ''
+#       voices: ['']
+ 
+#  
+#   stt:
+#     openai:
+#       url: ''
+#       apiKey: '${STT_API_KEY}'
+#       model: ''
+ 
+# rateLimits:
+#   fileUploads:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
+#   conversationsImport:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
+ 
+# Definition of custom endpoints
+endpoints:
+  # assistants:
+  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
+  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
+  #   timeoutMs: 180000  # Timeout for assistant operations
+  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
+  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+  #   # excludedIds: ["asst_excludedAssistantId"]
+  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
+  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
+  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+  #   retrievalModels: ["gpt-4-turbo-preview"]
+  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+  google:
+    apiKey: ${GOOGLE_API_KEY}
+    models:
+     - gemini-1.5-flash-latest
