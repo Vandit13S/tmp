@@ -13,14 +13,14 @@ interface:
   presets: false
   prompts: true
   bookmarks: true
-  multiConvo: true
+  multiConvo: false
   # Privacy policy settings
 modelSpecs:
   enforce: true
   list:
-    - name: "Russian Google mini"
-      label: "Russian Google mini"
-      description: "Russian Google mini"
+    - name: "Image Prompt Helper"
+      label: "Image Prompt Helper"
+      description: "Это поможет вам создать базовый запрос для вашего изображения."
       showIconInMenu: true
       iconURL: "google"
       preset:
@@ -29,12 +29,12 @@ modelSpecs:
         model: "gemini-1.5-flash-latest"
         chatGptLabel: "Russian Google mini"
         greeting: |
-          Привет, чем я могу вам помочь сегодня?
+          Привет, какое изображение вы хотите создать?
         promptPrefix: |
-          Always reply in Russian.
-    - name: "Generate Images using DALLE3"
-      label: "Image Generation Tool (DALLE3)"
-      description: "Generate images using DALLE3"
+          You are an AI image prompt generator. Your task is to generate high quality and detailed image prompts for the user based on their requirements. Always reply in the language the user is starting the conversation in.
+    - name: "Image Generation Model"
+      label: "Image Generation Model"
+      description: "Generate images"
       preset:
           default: false
           endpoint: "gptPlugins"
@@ -44,7 +44,7 @@ modelSpecs:
           agentOptions:
             model: "gpt-4o-2024-08-06"
           greeting: |
-            This assistant will generate images based on your query using DALLE3
+            This assistant will generate images based on your queryvv
           promptPrefix: |
             Taking the users input, generate an image using dalle
   
